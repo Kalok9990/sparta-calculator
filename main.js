@@ -63,7 +63,7 @@ switch (calc) {
         alert("Square root of " +inNum+ " is " + total);
         break;
       default:
-        console.log("Please enter a correct choice.");
+        prompt("Please enter a correct choice.");
     }
     break;
 
@@ -131,5 +131,4 @@ switch (calc) {
     alert("Your trip will take " +time+ " hours and will cost be £" +cost);
     break;
   default:
-
 }
