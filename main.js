@@ -1,20 +1,19 @@
 var calc = prompt("What sort of calculator would you like to use? a) basic b) advanced c) BMI d) Trip");
 
-function wrongNum(num){
-  if(isNan(num)==true){
-    alert("This is not a number. Please try again.");
-    break;
-  }
-}
-
 switch (calc) {
   case "a":
   // basic calculator
       var total;
       var inNum = prompt("Please enter a number.");
-      wrongNum(inNum);
+      if(isNaN(inNum)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var secNum = prompt("Please enter another number.");
-      wrongNum(secNum);
+      if(isNaN(secNum)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var sign = prompt("please enter a sign(+,-,/ or *).");
       switch (sign) {
         case "+":
@@ -42,15 +41,24 @@ switch (calc) {
     switch (choice) {
       case "a":
         var inNum = prompt("What number do you want?");
-        wrongNum(inNum);
+        if(isNaN(inNum)==true){
+          alert("This is not a number. Please try again.");
+          break;
+        }
         var power = prompt("To the power of?");
-        wrongNum(power);
+        if(isNaN(power)==true){
+          alert("This is not a number. Please try again.");
+          break;
+        }
         var total = Math.pow(inNum, power);
         alert(inNum + " to the power of " + power + " is " + total);
         break;
       case "b":
         var inNum = prompt("What number do you want?");
-        wrongNum(inNum);
+        if(isNaN(inNum)==true){
+          alert("This is not a number. Please try again.");
+          break;
+        }
         var total = Math.sqrt(inNum);
         alert("Square root of " +inNum+ " is " + total);
         break;
@@ -64,16 +72,28 @@ switch (calc) {
     var system = prompt("Would you like to calculate your BMI in imperial or metric system?");
     if(system == "imperial"){
       var weight = prompt("What is your weight in pounds?");
-      wrongNum(weight);
+      if(isNaN(weight)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var height = prompt("What is your height in inches?");
-      wrongNum(height);
+      if(isNaN(height)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var bmi = (weight*703)/(Math.pow(height, 2));
       alert("Your BMI is " + bmi);
     }else if(system == "metric"){
       var weight = prompt("What is your weight in kilograms?");
-      wrongNum(weight);
+      if(isNaN(weight)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var height = prompt("What is your height in metres?");
-      wrongNum(height);
+      if(isNaN(height)==true){
+        alert("This is not a number. Please try again.");
+        break;
+      }
       var bmi = weight/(Math.pow(height,2));
       alert("Your BMI is " + bmi);
     }
@@ -82,14 +102,25 @@ switch (calc) {
   case "d":
   //Trip calculator
     var distance = prompt("Enter the distance (miles).");
-    wrongNum(distance);
+    if(isNaN(distance)==true){
+      alert("This is not a number. Please try again.");
+      break;
+    }
     var incost = prompt("Enter the cost for fuel per gallon (in pounds).");
-    wrongNum(incost);
+    if(isNaN(incost)==true){
+      alert("This is not a number. Please try again.");
+      break;
+    }
     var speed = prompt("How fast are you travelling(miles per hour)?");
-    wrongNum(speed);
+    if(isNaN(speed)==true){
+      alert("This is not a number. Please try again.");
+      break;
+    }
     var fuel = prompt("Enter fuel efficiency (miles per gallon).");
-    wrongNum(fuel);
-    if(speed >60){
+    if(isNaN(fuel)==true){
+      alert("This is not a number. Please try again.");
+      break;
+    }else if(speed >60){
       fuel = fuel - ((speed - 60)*2);
       if(fuel <= 0){
         fuel = 1;
